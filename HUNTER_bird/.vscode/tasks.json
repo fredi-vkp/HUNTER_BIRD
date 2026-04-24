@@ -1,0 +1,38 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build SDL2",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "src/main.c",
+
+        "-Ilibs/SDL2/include",
+        "-Ilibs/SDL2_image/include",
+        "-Ilibs/SDL2_ttf/include",
+        "-Ilibs/SDL2_mixer/include",
+
+        "-Llibs/SDL2/lib",
+        "-Llibs/SDL2_image/lib",
+        "-Llibs/SDL2_ttf/lib",
+        "-Llibs/SDL2_mixer/lib",
+
+        "-lSDL2",
+        "-lSDL2_image",
+        "-lSDL2_ttf",
+        "-lSDL2_mixer",
+
+        "-o",
+        "main"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
+    }
+  ]
+}

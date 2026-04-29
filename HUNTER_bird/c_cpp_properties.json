@@ -1,7 +1,7 @@
 {
   "configurations": [
     {
-      "name": "Linux",
+      "name": "Win32",
       "includePath": [
         "${workspaceFolder}/include",
         "${workspaceFolder}/libs/SDL2/include",
@@ -9,9 +9,9 @@
         "${workspaceFolder}/libs/SDL2_ttf/include",
         "${workspaceFolder}/libs/SDL2_mixer/include"
       ],
-      "compilerPath": "/usr/bin/gcc",
+      "compilerPath": "C:/msys64/mingw64/bin/gcc.exe",
       "cStandard": "c11",
-      "intelliSenseMode": "linux-gcc-x64"
+      "intelliSenseMode": "windows-gcc-x64"
     }
   ],
   "version": 4

@@ -11,7 +11,7 @@ Auteur   : Dev A
 #include <stdlib.h>
 #include "game.h"
 
-int main(void)
+int main(int argc, char *argv[])
 {
     Game game = {0};
 

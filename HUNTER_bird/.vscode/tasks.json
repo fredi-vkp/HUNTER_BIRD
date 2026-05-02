@@ -2,22 +2,68 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Build Game",
+      "label": "build hunter",
       "type": "shell",
-      "command": "gcc",
+      "command": "C:\\msys64\\mingw64\\bin\\gcc.exe",
       "args": [
-        "*.c",
-        "-I../include",
+        "src/main.c",
+        "src/game.c",
+        "src/bird.c",
+        "src/player.c",
+        "src/level.c",
+        "src/hud.c",
+        "src/menu.c",
+        "src/sound.c",
+        "-Iinclude",
+        "-IC:\\msys64\\mingw64\\include\\SDL2",
+        "-LC:\\msys64\\mingw64\\lib",
         "-o",
-        "game.exe",
+        "hunter_bird.exe",
         "-lmingw32",
         "-lSDL2main",
         "-lSDL2",
-        "-lSDL2_ttf",
         "-lSDL2_image",
-        "-lSDL2_mixer"
+        "-lSDL2_mixer",
+        "-lSDL2_ttf",
+        "-lm"
       ],
-      "group": "build"
+      "options": {
+        "cwd": "${workspaceFolder}/HUNTER_bird",
+        "env": {
+          "PATH": "C:\\msys64\\mingw64\\bin;${env:PATH}"
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+    },
+    {
+      "label": "clean",
+      "type": "shell",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "del /q *.exe *.o 2>nul"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/HUNTER_bird"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "run hunter",
+      "type": "shell",
+      "command": "hunter_bird.exe",
+      "options": {
+        "cwd": "${workspaceFolder}/HUNTER_bird"
+      },
+      "dependsOn": ["build hunter"],
+      "problemMatcher": []
     }
-  ]
-}

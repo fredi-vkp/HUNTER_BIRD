@@ -15,7 +15,6 @@
 
 #include "player.h"  /* Declarations des fonctions  */
 #include <math.h>    /* Pour sqrtf()                */
-#include <game.h>
 
 /* ================================================
  * 1. PLAYER_INIT
@@ -74,10 +73,10 @@ void player_draw_crosshair(Player *p, SDL_Renderer *renderer,
             float a2 = (float)(i + 1) * 3.14159f * 2.0f / 36.0f;
 
             /* Coordonnees des deux extremites du segment */
-            int x1 = x + (int)(r * SDL_cosf(a1));
-            int y1 = y + (int)(r * SDL_sinf(a1));
-            int x2 = x + (int)(r * SDL_cosf(a2));
-            int y2 = y + (int)(r * SDL_sinf(a2));
+            int x1 = x + (int)(r * cosf(a1));
+            int y1 = y + (int)(r * sinf(a1));
+            int x2 = x + (int)(r * cosf(a2));
+            int y2 = y + (int)(r * sinf(a2));
 
             SDL_RenderDrawLine(renderer, x1, y1, x2, y2);
         }
